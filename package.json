@@ -1,19 +1,23 @@
 {
   "name": "tanisa",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/converter.ts",
+  "description": "An utility to convert Malagasy 🇲🇬 numbers, including decimals, into their word representations.",
   "license": "MIT",
   "author": {
-    "name": "Rija Nifalian",
+    "name": "Rija Nifaliana",
     "email": "rija.nifaliana@gmail.com"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
     "format": "prettier . --write",
     "lint": "eslint",
     "lint:fix": "eslint . --fix",
-    "types": "tsc",
+    "build": "tsc",
     "postinstall": "husky",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
@@ -35,5 +39,17 @@
   },
   "dependencies": {
     "husky-init": "^8.0.0"
-  }
+  },
+  "keywords": [
+    "malagasy",
+    "number",
+    "words",
+    "converter",
+    "i18n",
+    "l10n",
+    "toWords",
+    "fanisana",
+    "typescript",
+    "javascript"
+  ]
 }
