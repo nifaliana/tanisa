@@ -26,7 +26,7 @@ export class MalagasyNumberToWords {
       )
     }
 
-    let integerWords = this.convertInteger(integerPartNum)
+    const integerWords = this.convertInteger(integerPartNum)
 
     let decimalWords = ''
     if (decimalPartStr && decimalPartStr.length > 0) {
