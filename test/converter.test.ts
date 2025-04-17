@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { MalagasyNumberToWordsConverter, MalagasyNumerals } from "../src";
+import { MalagasyNumberToWords, MalagasyNumerals } from "../src";
 
-describe("MalagasyNumberToWordsConverter", () => {
-  let converter: MalagasyNumberToWordsConverter;
+describe("MalagasyNumberToWords", () => {
+  let converter: MalagasyNumberToWords;
 
   beforeEach(() => {
-    converter = new MalagasyNumberToWordsConverter();
+    converter = new MalagasyNumberToWords();
   });
 
   const testCases: [number | string, string][] = [
@@ -29,10 +29,10 @@ describe("MalagasyNumberToWordsConverter", () => {
     [121, "iraika amby roapolo amby zato"],
     [200, "roanjato"],
     [201, "iraika amby roanjato"],
-    [210, "folo sy roanjato"], // Uses 'sy'
-    [225, "dimy amby roapolo sy roanjato"], // Uses 'sy'
+    [210, "folo sy roanjato"],
+    [225, "dimy amby roapolo sy roanjato"],
     [600, "enin-jato"],
-    [999, "sivy amby sivifolo sy sivinjato"], // Complex hundred with 'sy'
+    [999, "sivy amby sivifolo sy sivinjato"],
     // // Thousands
     [1000, "arivo"],
     [1001, "iray sy arivo"],
@@ -41,12 +41,12 @@ describe("MalagasyNumberToWordsConverter", () => {
     [1378, "valo amby fitopolo sy telonjato sy arivo"],
     [2000, "roa arivo"],
     [2023, "telo amby roapolo sy roa arivo"],
-    // // Ten Thousands (Alina)
+    // Ten Thousands (Alina)
     [10000, "iray alina"],
     [15000, "dimy arivo sy iray alina"],
     [20000, "roa alina"],
     [98_765, "dimy amby enimpolo sy fitonjato sy valo arivo sy sivy alina"],
-    // // Hundred Thousands (Hetsy)
+    // Hundred Thousands (Hetsy)
     [100000, "iray hetsy"],
     [
       123456,
@@ -57,7 +57,7 @@ describe("MalagasyNumberToWordsConverter", () => {
       654321,
       "iraika amby roapolo sy telonjato sy efatra arivo sy dimy alina sy enina hetsy",
     ],
-    // // Millions (Tapitrisa)
+    // Millions (Tapitrisa)
     [1000000, "iray tapitrisa"],
     [1000001, "iray sy iray tapitrisa"],
     [2500000, "dimy hetsy sy roa tapitrisa"],
@@ -65,7 +65,7 @@ describe("MalagasyNumberToWordsConverter", () => {
       9876543,
       "telo amby efapolo sy dimanjato sy enina arivo sy fito alina sy valo hetsy sy sivy tapitrisa",
     ],
-    // // Larger Units
+    // Larger Units
     [10000000, "iray safatsiroa"],
     [100000000, "iray tsitamboisa"],
     [1000000000, "iray lavitrisa"],
@@ -101,7 +101,7 @@ describe("MalagasyNumberToWordsConverter", () => {
       expect(() => converter.toWords(-1)).toThrow(RangeError);
       expect(() => converter.toWords(-100.5)).toThrow(RangeError);
       expect(() => converter.toWords("-0")).not.toThrow(RangeError);
-      expect(converter.toWords("-0")).toBe("aotra"); // Should be treated as zero
+      expect(converter.toWords("-0")).toBe("aotra");
     });
 
     it("should throw RangeError for numbers exceeding the limit", () => {

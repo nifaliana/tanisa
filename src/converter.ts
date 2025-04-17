@@ -1,6 +1,6 @@
 import { LargeNumberUnit, MalagasyNumerals } from ".";
 
-export class MalagasyNumberToWordsConverter {
+export class MalagasyNumberToWords {
   public toWords(number: number | string): string {
     const numStr = String(number);
     const [integerPartStr, decimalPartStr] = numStr.split(".");
