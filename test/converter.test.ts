@@ -13,7 +13,7 @@ describe("MalagasyNumberToWordsConverter", () => {
     [1, "iray"],
     [5, "dimy"],
     [9, "sivy"],
-    // Tens
+    // // Tens
     [10, "folo"],
     [11, "iraika amby folo"],
     [15, "dimy amby folo"],
@@ -21,7 +21,7 @@ describe("MalagasyNumberToWordsConverter", () => {
     [21, "iraika amby roapolo"],
     [35, "dimy amby telopolo"],
     [99, "sivy amby sivifolo"],
-    // Hundreds
+    // // Hundreds
     [100, "zato"],
     [101, "iraika amby zato"],
     [110, "folo amby zato"],
@@ -33,7 +33,7 @@ describe("MalagasyNumberToWordsConverter", () => {
     [225, "dimy amby roapolo sy roanjato"], // Uses 'sy'
     [600, "enin-jato"],
     [999, "sivy amby sivifolo sy sivinjato"], // Complex hundred with 'sy'
-    // Thousands
+    // // Thousands
     [1000, "arivo"],
     [1001, "iray sy arivo"],
     [1010, "folo sy arivo"],
@@ -41,12 +41,12 @@ describe("MalagasyNumberToWordsConverter", () => {
     [1378, "valo amby fitopolo sy telonjato sy arivo"],
     [2000, "roa arivo"],
     [2023, "telo amby roapolo sy roa arivo"],
-    // Ten Thousands (Alina)
+    // // Ten Thousands (Alina)
     [10000, "iray alina"],
     [15000, "dimy arivo sy iray alina"],
     [20000, "roa alina"],
-    [98765, "dimy amby enimpolo sy fitonjato sy valo arivo sy sivy alina"],
-    // Hundred Thousands (Hetsy)
+    [98_765, "dimy amby enimpolo sy fitonjato sy valo arivo sy sivy alina"],
+    // // Hundred Thousands (Hetsy)
     [100000, "iray hetsy"],
     [
       123456,
@@ -57,7 +57,7 @@ describe("MalagasyNumberToWordsConverter", () => {
       654321,
       "iraika amby roapolo sy telonjato sy efatra arivo sy dimy alina sy enina hetsy",
     ],
-    // Millions (Tapitrisa)
+    // // Millions (Tapitrisa)
     [1000000, "iray tapitrisa"],
     [1000001, "iray sy iray tapitrisa"],
     [2500000, "dimy hetsy sy roa tapitrisa"],
@@ -65,7 +65,7 @@ describe("MalagasyNumberToWordsConverter", () => {
       9876543,
       "telo amby efapolo sy dimanjato sy enina arivo sy fito alina sy valo hetsy sy sivy tapitrisa",
     ],
-    // Larger Units
+    // // Larger Units
     [10000000, "iray safatsiroa"],
     [100000000, "iray tsitamboisa"],
     [1000000000, "iray lavitrisa"],
@@ -77,6 +77,7 @@ describe("MalagasyNumberToWordsConverter", () => {
     // Decimals
     [0.5, "aotra faingo dimy"],
     [0.1, "aotra faingo iray"],
+    ["2.00100", "roa faingo aotra aotra zato"],
     [
       1378.23,
       "valo amby fitopolo sy telonjato sy arivo faingo telo amby roapolo",
