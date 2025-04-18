@@ -1,6 +1,6 @@
-import { LargeNumberUnit, MalagasyNumerals } from '.'
+import { LargeNumberUnit, MalagasyNumerals } from './dictionary'
 
-export class MalagasyNumberToWords {
+export class Tanisa {
   public toWords(number: number | string): string {
     const numStr = String(number)
     const [integerPartStr, decimalPartStr] = numStr.split('.')

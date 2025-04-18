@@ -1,11 +1,11 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { MalagasyNumberToWords, MalagasyNumerals } from '../src'
+import { Tanisa, MalagasyNumerals } from '../src'
 
 describe('MalagasyNumberToWords', () => {
-  let converter: MalagasyNumberToWords
+  let converter: Tanisa
 
   beforeEach(() => {
-    converter = new MalagasyNumberToWords()
+    converter = new Tanisa()
   })
 
   const testCases: [number | string, string][] = [
