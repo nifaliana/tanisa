@@ -1,3 +1,5 @@
+import { MalagasyNumerals } from './dictionary'
+
 export interface TanisaOptions {
   /**
    * If true, ignores the decimal part of the number.
@@ -13,3 +15,6 @@ export interface TanisaOptions {
    */
   decimalPlaces?: number
 }
+
+export type LargeNumberUnit =
+  (typeof MalagasyNumerals.LARGE_NUMBER_UNITS)[number]
