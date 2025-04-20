@@ -54,11 +54,11 @@ tanisa.toWords(0.008) ==> Aotra faingo aotra aotra valo
 Examples:
 
 ```
-converter.toWords("456.789", { ignoreDecimal: true }) => Enina amby dimampolo sy efajato
+tanisa.toWords("456.789", { ignoreDecimal: true }) => Enina amby dimampolo sy efajato
 
-converter.toWords("3.14567", { decimalPlaces: 2 }); ==>  Telo faingo efatra amby folo
+tanisa.toWords("3.14567", { decimalPlaces: 2 }); ==>  Telo faingo efatra amby folo
 
-converter.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  Telo
+tanisa.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  Telo
 ```
 
 ## License
