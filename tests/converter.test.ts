@@ -1,5 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { Tanisa, MalagasyNumerals } from '../src'
+import { TanisaOptions } from '../src/interface'
 
 describe('MalagasyNumberToWords', () => {
   let converter: Tanisa
@@ -122,6 +123,72 @@ describe('MalagasyNumberToWords', () => {
     it('should handle number input with maximum safe integer', () => {
       const safeInt = Number.MAX_SAFE_INTEGER // 9_007_199_254_740_991
       expect(() => converter.toWords(safeInt)).not.toThrow()
+    })
+  })
+
+  describe('ignoreDecimal Option', () => {
+    it('should ignore decimal part when ignoreDecimal is true', () => {
+      const options: TanisaOptions = { ignoreDecimal: true }
+      expect(converter.toWords(123.456, options)).toBe(
+        'telo amby roapolo amby zato'
+      )
+      expect(converter.toWords(0.99, options)).toBe('aotra')
+      expect(converter.toWords(1000.001, options)).toBe('arivo')
+    })
+
+    it('should NOT ignore decimal part when ignoreDecimal is false or absent', () => {
+      expect(converter.toWords(10.5, { ignoreDecimal: false })).toBe(
+        'folo faingo dimy'
+      )
+      expect(converter.toWords(10.5)).toBe('folo faingo dimy')
+    })
+  })
+
+  describe('decimalPlaces Option', () => {
+    it('should ignore decimal part when decimalPlaces is 0', () => {
+      const options: TanisaOptions = { decimalPlaces: 0 }
+      expect(converter.toWords(123.456, options)).toBe(
+        'telo amby roapolo amby zato'
+      )
+      expect(converter.toWords(0.99, options)).toBe('aotra')
+    })
+
+    it('should truncate decimal part to specified places', () => {
+      expect(converter.toWords(1.2345, { decimalPlaces: 1 })).toBe(
+        'iray faingo roa'
+      )
+      expect(converter.toWords(1.2345, { decimalPlaces: 2 })).toBe(
+        'iray faingo telo amby roapolo'
+      )
+      expect(converter.toWords(1.2345, { decimalPlaces: 3 })).toBe(
+        'iray faingo efatra amby telopolo sy roanjato'
+      )
+    })
+
+    it('should handle leading zeros correctly with truncation', () => {
+      expect(converter.toWords(10.056, { decimalPlaces: 1 })).toBe('folo')
+      expect(converter.toWords(10.056, { decimalPlaces: 2 })).toBe(
+        'folo faingo aotra dimy'
+      )
+      expect(converter.toWords(10.056, { decimalPlaces: 3 })).toBe(
+        'folo faingo aotra enina amby dimampolo'
+      )
+      expect(converter.toWords(10.009, { decimalPlaces: 2 })).toBe('folo')
+      expect(converter.toWords(10.009, { decimalPlaces: 3 })).toBe(
+        'folo faingo aotra aotra sivy'
+      )
+    })
+
+    it('should convert all decimals if decimalPlaces is equal to or greater than actual places', () => {
+      expect(converter.toWords(5.67, { decimalPlaces: 2 })).toBe(
+        'dimy faingo fito amby enimpolo'
+      )
+      expect(converter.toWords(5.67, { decimalPlaces: 3 })).toBe(
+        'dimy faingo fito amby enimpolo'
+      )
+      expect(converter.toWords(5.67, { decimalPlaces: 10 })).toBe(
+        'dimy faingo fito amby enimpolo'
+      )
     })
   })
 })
