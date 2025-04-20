@@ -6,7 +6,8 @@
   "license": "MIT",
   "author": {
     "name": "Rija Nifaliana",
-    "email": "rija.nifaliana@gmail.com"
+    "email": "rija.nifaliana@gmail.com",
+    "url": "https://github.com/nifaliana"
   },
   "scripts": {
     "test": "vitest run",
@@ -46,5 +47,13 @@
     "fanisana",
     "typescript",
     "javascript"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nifaliana/tanisa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nifaliana/tanisa/issues"
+  },
+  "homepage": "https://github.com/nifaliana/tanisa#readme"
 }

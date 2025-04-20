@@ -5,6 +5,8 @@
 
 **Tanisa** (Malagasy 🇲🇬 for "to count") is here to give those digits a voice, transforming them into elegant Malagasy words.
 
+[View on GitHub](https://github.com/nifaliana/tanisa)
+
 ## Features
 
 - ✅ **Handles whole numbers** : From a humble "aotra" (zero) to numbers that make your calculator sweat.
@@ -60,3 +62,7 @@ converter.toWords("3.14567", { decimalPlaces: 2 }); ==>  Telo faingo efatra amby
 
 converter.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  Telo
 ```
+
+## License
+
+This project is proudly released under the [MIT License](https://github.com/nifaliana/tanisa/blob/main/LICENSE)
