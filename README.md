@@ -40,3 +40,22 @@ tanisa.toWords(233) ==> Telo amby telopolo sy roanjato
 tanisa.toWords(18.3) ==> Valo amby folo faingo telo
 tanisa.toWords(0.008) ==> Aotra faingo aotra aotra valo
 ```
+
+## Options
+
+| Option Name     | Type      | Default                    | Description                                                                                                                                     |
+| :-------------- | :-------- | :------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ignoreDecimal` | `boolean` | `false`                    | If set to `true`, the converter completely disregards any digits after the decimal point. Only the integer part of the number is considered.    |
+| `decimalPlaces` | `number`  | `undefined` (converts all) | Specifies the maximum number of digits to convert in the decimal part. Extra digits are truncated (not rounded). Set to `0` to ignore decimals. |
+
+**Note:** If both `ignoreDecimal` is `true` and `decimalPlaces` is set, `ignoreDecimal: true` takes precedence, and the decimal part will be entirely ignored.
+
+Examples:
+
+```
+converter.toWords("456.789", { ignoreDecimal: true }) => Enina amby dimampolo sy efajato
+
+converter.toWords("3.14567", { decimalPlaces: 2 }); ==>  Telo faingo efatra amby folo
+
+converter.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  Telo
+```
