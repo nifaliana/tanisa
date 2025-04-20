@@ -126,7 +126,7 @@ describe('MalagasyNumberToWords', () => {
     })
   })
 
-  describe('ignoreDecimal Option', () => {
+  describe('ignoreDecimal option', () => {
     it('should ignore decimal part when ignoreDecimal is true', () => {
       const options: TanisaOptions = { ignoreDecimal: true }
       expect(converter.toWords(123.456, options)).toBe(
@@ -144,7 +144,7 @@ describe('MalagasyNumberToWords', () => {
     })
   })
 
-  describe('decimalPlaces Option', () => {
+  describe('decimalPlaces option', () => {
     it('should ignore decimal part when decimalPlaces is 0', () => {
       const options: TanisaOptions = { decimalPlaces: 0 }
       expect(converter.toWords(123.456, options)).toBe(
@@ -189,6 +189,13 @@ describe('MalagasyNumberToWords', () => {
       expect(converter.toWords(5.67, { decimalPlaces: 10 })).toBe(
         'dimy faingo fito amby enimpolo'
       )
+    })
+  })
+
+  describe('decimalPlaces and ignoreDecimal options', () => {
+    it('should ignore decimal part if both params is set', () => {
+      const options: TanisaOptions = { decimalPlaces: 2, ignoreDecimal: true }
+      expect(converter.toWords(3.134343, options)).toBe('telo')
     })
   })
 })
