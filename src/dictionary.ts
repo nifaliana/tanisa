@@ -68,6 +68,3 @@ export const MalagasyNumerals = {
 
   MAX_SUPPORTED_INTEGER: 1_000_000_000_000_000_000 * 1000,
 } as const
-
-export type LargeNumberUnit =
-  (typeof MalagasyNumerals.LARGE_NUMBER_UNITS)[number]

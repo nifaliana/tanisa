@@ -1,5 +1,5 @@
-import { LargeNumberUnit, MalagasyNumerals } from './dictionary'
-import { TanisaOptions } from './interface'
+import { MalagasyNumerals } from './dictionary'
+import { TanisaOptions, LargeNumberUnit } from './interface'
 
 export class Tanisa {
   public toWords(number: number | string, options?: TanisaOptions): string {

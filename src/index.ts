@@ -1,3 +1,4 @@
 // src/index.ts
 export { Tanisa } from './converter'
-export { MalagasyNumerals, LargeNumberUnit } from './dictionary'
+export { MalagasyNumerals } from './dictionary'
+export { LargeNumberUnit, TanisaOptions } from './interface'
