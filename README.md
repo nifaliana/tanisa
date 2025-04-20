@@ -11,6 +11,7 @@
 - ✅ **Decimal support** : Gracefully converts those pesky fractions into spoken form.
 - ✅ **Large number linguistics**: Tackles big numbers with the appropriate Malagasy terminology.
 - ✅ **User-friendly API** : So intuitive, you'll feel like you've been speaking number-words your whole life.
+- ✅ **Configurable options** : Customize the conversion behavior, like controlling how decimal places are handled and more...
 - 🛡️ **Error Handling** : Throws helpful errors when you try to feed it something it can't digest.
 
 ## Installation
