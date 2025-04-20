@@ -1,14 +1,20 @@
 import { LargeNumberUnit, MalagasyNumerals } from './dictionary'
+import { TanisaOptions } from './interface'
 
 export class Tanisa {
-  public toWords(number: number | string): string {
-    const numStr = String(number)
+  public toWords(number: number | string, options?: TanisaOptions): string {
+    const ignoreDecimal = options?.ignoreDecimal ?? false
+    const decimalPlaces = options?.decimalPlaces ?? -1
+
+    const numStr = String(number).trim()
     const [integerPartStr, decimalPartStr] = numStr.split('.')
     const integerPartNum = parseInt(integerPartStr || '0', 10)
 
     if (
       isNaN(integerPartNum) ||
-      (decimalPartStr && isNaN(parseInt(decimalPartStr, 10)))
+      (decimalPartStr &&
+        decimalPartStr.length > 0 &&
+        isNaN(parseInt(decimalPartStr, 10)))
     ) {
       throw new TypeError(`Invalid number input: "${number}"`)
     }
@@ -29,21 +35,40 @@ export class Tanisa {
     const integerWords = this.convertInteger(integerPartNum)
 
     let decimalWords = ''
-    if (decimalPartStr && decimalPartStr.length > 0) {
-      for (let i = 0; i < decimalPartStr.length; i++) {
-        const digit = decimalPartStr[i]
-        if (digit === '0') {
-          decimalWords += MalagasyNumerals.GLUE_DECIMAL_ZERO
-        } else {
-          const remainingDecimal = decimalPartStr.substring(i)
-          decimalWords += this.convertInteger(parseInt(remainingDecimal, 10))
-          break
+    const processDecimals =
+      decimalPartStr &&
+      decimalPartStr.length > 0 &&
+      !ignoreDecimal &&
+      decimalPlaces !== 0
+
+    if (processDecimals) {
+      let effectiveDecimalPartStr = decimalPartStr
+
+      if (decimalPlaces > 0 && decimalPartStr.length > decimalPlaces) {
+        effectiveDecimalPartStr = decimalPartStr.substring(0, decimalPlaces)
+      }
+
+      if (parseInt(effectiveDecimalPartStr || '0', 10) > 0) {
+        let tempDecimalWords = ''
+        for (let i = 0; i < effectiveDecimalPartStr.length; i++) {
+          const digit = effectiveDecimalPartStr[i]
+          if (digit === '0') {
+            tempDecimalWords += MalagasyNumerals.GLUE_DECIMAL_ZERO
+          } else {
+            const remainingDecimal = effectiveDecimalPartStr.substring(i)
+            tempDecimalWords += this.convertInteger(
+              parseInt(remainingDecimal, 10)
+            )
+            break
+          }
+        }
+        if (tempDecimalWords) {
+          decimalWords = MalagasyNumerals.GLUE_FAINGO + tempDecimalWords
         }
       }
-      return integerWords + MalagasyNumerals.GLUE_FAINGO + decimalWords
-    } else {
-      return integerWords
     }
+
+    return integerWords + decimalWords
   }
 
   private convertInteger(num: number): string {
