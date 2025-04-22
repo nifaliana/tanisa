@@ -42,7 +42,7 @@ export const MalagasyNumerals = {
     'telonjato',
     'efajato',
     'dimanjato',
-    'enin-jato',
+    'eninjato',
     'fitonjato',
     'valonjato',
     'sivinjato',

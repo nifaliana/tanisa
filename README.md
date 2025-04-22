@@ -3,7 +3,9 @@
 [![npm version](https://badge.fury.io/js/tanisa.svg)](https://www.npmjs.com/package/tanisa)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-**Tanisa** (Malagasy 🇲🇬 for "to count") is here to give those digits a voice, transforming them into elegant Malagasy words.
+**Tanisa** is here to give those digits a voice, transforming them into elegant Malagasy words 🇲🇬.
+
+**In simpler terms** : An utility to convert malagasy numbers into their word representations.
 
 ## Features
 
@@ -40,6 +42,8 @@ tanisa.toWords(233)
 tanisa.toWords(233) ==> Telo amby telopolo sy roanjato
 tanisa.toWords(18.3) ==> Valo amby folo faingo telo
 tanisa.toWords(0.008) ==> Aotra faingo aotra aotra valo
+
+tanisa.toWords(12_345_678_901) ==> iraika amby sivinjato sy valo arivo sy fito alina sy enina hetsy sy dimy tapitrisa sy efatra safatsiroa sy telo tsitamboisa sy roa lavitrisa sy iray alinkisa
 ```
 
 ## Options
@@ -60,6 +64,12 @@ tanisa.toWords("3.14567", { decimalPlaces: 2 }); ==>  Telo faingo efatra amby fo
 
 tanisa.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  Telo
 ```
+
+## Contribution
+
+**Contributions are welcome!**
+
+Feel free to check out the [CONTRIBUTING](CONTRIBUTING) file.
 
 ## License
 

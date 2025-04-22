@@ -32,7 +32,7 @@ describe('MalagasyNumberToWords', () => {
     [201, 'iraika amby roanjato'],
     [210, 'folo sy roanjato'],
     [225, 'dimy amby roapolo sy roanjato'],
-    [600, 'enin-jato'],
+    [600, 'eninjato'],
     [999, 'sivy amby sivifolo sy sivinjato'],
     // // Thousands
     [1000, 'arivo'],
