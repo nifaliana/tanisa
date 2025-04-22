@@ -18,32 +18,34 @@
 
 ## Installation
 
-`yarn add tanisa`
+```js
+yarn add tanisa
+```
 
 ## Usage
 
 1. Import the Magic:
 
-```
+```ts
 import { Tanisa } from 'tanisa'
 ```
 
 2. Simply use it:
 
-```
-const tanisa = new Tanisa();
+```ts
+const tanisa = new Tanisa()
 
 tanisa.toWords(233)
 ```
 
 3. Examples:
 
-```
-tanisa.toWords(233) ==> Telo amby telopolo sy roanjato
-tanisa.toWords(18.3) ==> Valo amby folo faingo telo
-tanisa.toWords(0.008) ==> Aotra faingo aotra aotra valo
+```js
+tanisa.toWords(233) // Telo amby telopolo sy roanjato
+tanisa.toWords(18.3) // Valo amby folo faingo telo
+tanisa.toWords(0.008) // Aotra faingo aotra aotra valo
 
-tanisa.toWords(12_345_678_901) ==> iraika amby sivinjato sy valo arivo sy fito alina sy enina hetsy sy dimy tapitrisa sy efatra safatsiroa sy telo tsitamboisa sy roa lavitrisa sy iray alinkisa
+tanisa.toWords(12_345_678_901) // iraika amby sivinjato sy valo arivo sy fito alina sy enina hetsy sy dimy tapitrisa sy efatra safatsiroa sy telo tsitamboisa sy roa lavitrisa sy iray alinkisa
 ```
 
 ## Options
@@ -57,19 +59,19 @@ tanisa.toWords(12_345_678_901) ==> iraika amby sivinjato sy valo arivo sy fito a
 
 Examples:
 
-```
-tanisa.toWords("456.789", { ignoreDecimal: true }) => Enina amby dimampolo sy efajato
+```js
+tanisa.toWords("456.789", { ignoreDecimal: true }) // Enina amby dimampolo sy efajato
 
-tanisa.toWords("3.14567", { decimalPlaces: 2 }); ==>  Telo faingo efatra amby folo
+tanisa.toWords("3.14567", { decimalPlaces: 2 }); // Telo faingo efatra amby folo
 
-tanisa.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  Telo
+tanisa.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  // Telo
 ```
 
 ## Contribution
 
 **Contributions are welcome!**
 
-Feel free to check out the [CONTRIBUTING](CONTRIBUTING.md) file.
+Feel free to check out the [CONTRIBUTING](CONTRIBUTING) file.
 
 ## License
 
