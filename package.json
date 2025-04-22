@@ -37,16 +37,15 @@
     "vitest": "^3.1.1"
   },
   "keywords": [
-    "malagasy",
-    "number",
-    "words",
+    "javascript",
+    "typescript",
+    "number-to-words",
     "converter",
     "i18n",
-    "l10n",
     "toWords",
     "fanisana",
-    "typescript",
-    "javascript"
+    "malagasy",
+    "tanisa"
   ],
   "repository": {
     "type": "git",
