@@ -71,7 +71,7 @@ tanisa.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  // Te
 
 **Contributions are welcome!**
 
-Feel free to check out the [CONTRIBUTING](CONTRIBUTING) file.
+Feel free to check out the [CONTRIBUTING](https://github.com/nifaliana/tanisa/blob/main/CONTRIBUTING.md) file.
 
 ## License
 
