@@ -1,7 +1,17 @@
 {
   "name": "tanisa",
   "version": "1.1.1",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "description": "An utility to convert Malagasy 🇲🇬 numbers, including decimals, into their word representations.",
   "license": "MIT",
   "author": {
@@ -16,8 +26,7 @@
     "lint": "eslint",
     "lint:fix": "eslint . --fix",
     "build": "tsc",
-    "postinstall": "husky",
-    "prepack": "pinst --disable",
+    "prepack": "pinst --disable && tsc",
     "postpack": "pinst --enable",
     "prepare": "husky"
   },
