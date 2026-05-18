@@ -1,6 +1,7 @@
 export const MalagasyNumerals = {
   GLUE_SY: ' sy ',
   GLUE_AMBY: ' amby ',
+  GLUE_AMBIN_NY: " ambin'ny ",
   GLUE_FAINGO: ' faingo ',
   GLUE_DECIMAL_ZERO: 'aotra ',
 
