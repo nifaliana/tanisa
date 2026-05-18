@@ -133,22 +133,28 @@ export class Tanisa {
     return this.convertBelowHundred(num)
   }
 
+  private convertTeens(num: number): string {
+    const ones = num - 10
+    const digitWord =
+      ones === 1 ? MalagasyNumerals.CUSTOM_ONE : MalagasyNumerals.DIGITS[ones]
+    return digitWord + MalagasyNumerals.GLUE_AMBIN_NY + MalagasyNumerals.TENS[1]
+  }
+
   private convertBelowHundred(num: number): string {
     if (num >= 10) {
+      if (num > 10 && num < 20) return this.convertTeens(num)
+
       const tenMultiple = Math.floor(num / 10)
       const remainder = num % 10
       const tenWord = MalagasyNumerals.TENS[tenMultiple]
 
-      if (remainder === 0) {
-        return tenWord
-      } else {
-        // Always use "amby" for tens+digits
-        const digitWord =
-          remainder === 1
-            ? MalagasyNumerals.CUSTOM_ONE
-            : MalagasyNumerals.DIGITS[remainder]
-        return digitWord + MalagasyNumerals.GLUE_AMBY + tenWord
-      }
+      if (remainder === 0) return tenWord
+
+      const digitWord =
+        remainder === 1
+          ? MalagasyNumerals.CUSTOM_ONE
+          : MalagasyNumerals.DIGITS[remainder]
+      return digitWord + MalagasyNumerals.GLUE_AMBY + tenWord
     }
     return MalagasyNumerals.DIGITS[num]
   }

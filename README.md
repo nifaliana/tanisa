@@ -42,7 +42,7 @@ tanisa.toWords(233)
 
 ```js
 tanisa.toWords(233) // Telo amby telopolo sy roanjato
-tanisa.toWords(18.3) // Valo amby folo faingo telo
+tanisa.toWords(18.3) // Valo ambin'ny folo faingo telo
 tanisa.toWords(0.008) // Aotra faingo aotra aotra valo
 
 tanisa.toWords(12_345_678_901) // iraika amby sivinjato sy valo arivo sy fito alina sy enina hetsy sy dimy tapitrisa sy efatra safatsiroa sy telo tsitamboisa sy roa lavitrisa sy iray alinkisa
@@ -62,7 +62,7 @@ Examples:
 ```js
 tanisa.toWords("456.789", { ignoreDecimal: true }) // Enina amby dimampolo sy efajato
 
-tanisa.toWords("3.14567", { decimalPlaces: 2 }); // Telo faingo efatra amby folo
+tanisa.toWords("3.14567", { decimalPlaces: 2 }); // Telo faingo efatra ambin'ny folo
 
 tanisa.toWords("3.14567", { decimalPlaces: 2, ignoreDecimal: true }); ==>  // Telo
 ```
