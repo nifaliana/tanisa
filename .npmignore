@@ -1,0 +1,8 @@
+.claude
+.github
+.husky
+tests
+*.config.*
+*.lock
+.prettierrc
+.lintstagedrc.json
