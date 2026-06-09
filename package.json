@@ -1,8 +1,8 @@
 {
   "name": "tanisa",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "main": "src/index.ts",
-  "description": "An utility to convert Malagasy 🇲🇬 numbers, including decimals, into their word representations.",
+  "description": "A utility to convert Malagasy 🇲🇬 numbers, dates, and times into their word representations.",
   "license": "MIT",
   "author": {
     "name": "Rija Nifaliana",
