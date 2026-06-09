@@ -14,7 +14,7 @@ describe('MalagasyNumberToWords', () => {
     [1, 'iray'],
     [5, 'dimy'],
     [9, 'sivy'],
-    // // Tens
+    // Tens
     [10, 'folo'],
     [11, "iraika ambin'ny folo"],
     [12, "roa ambin'ny folo"],
@@ -29,7 +29,7 @@ describe('MalagasyNumberToWords', () => {
     [21, 'iraika amby roapolo'],
     [35, 'dimy amby telopolo'],
     [99, 'sivy amby sivifolo'],
-    // // Hundreds
+    // Hundreds
     [100, 'zato'],
     [101, 'iraika amby zato'],
     [110, 'folo amby zato'],
@@ -41,7 +41,7 @@ describe('MalagasyNumberToWords', () => {
     [225, 'dimy amby roapolo sy roanjato'],
     [600, 'eninjato'],
     [999, 'sivy amby sivifolo sy sivinjato'],
-    // // Thousands
+    // Thousands
     [1000, 'arivo'],
     [1001, 'iray sy arivo'],
     [1010, 'folo sy arivo'],
@@ -105,11 +105,21 @@ describe('MalagasyNumberToWords', () => {
       expect(() => converter.toWords(NaN)).toThrow(TypeError)
     })
 
+    it('should throw TypeError for scientific-notation string inputs', () => {
+      expect(() => converter.toWords('1e15')).toThrow(TypeError)
+      expect(() => converter.toWords('2E10')).toThrow(TypeError)
+    })
+
     it('should throw RangeError for negative numbers', () => {
       expect(() => converter.toWords(-1)).toThrow(RangeError)
       expect(() => converter.toWords(-100.5)).toThrow(RangeError)
       expect(() => converter.toWords('-0')).not.toThrow(RangeError)
       expect(converter.toWords('-0')).toBe('aotra')
+    })
+
+    it('should throw RangeError for negative fractional inputs like -0.5', () => {
+      expect(() => converter.toWords('-0.5')).toThrow(RangeError)
+      expect(() => converter.toWords('-0.001')).toThrow(RangeError)
     })
 
     it('should throw RangeError for numbers exceeding the limit', () => {
