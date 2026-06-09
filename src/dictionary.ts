@@ -68,4 +68,36 @@ export const MalagasyNumerals = {
   ] as const,
 
   MAX_SUPPORTED_INTEGER: 1_000_000_000_000_000_000 * 1000,
+
+  MONTHS: [
+    '',
+    'Janoary',
+    'Febroary',
+    'Martsa',
+    'Aprily',
+    'Mey',
+    'Jona',
+    'Jolay',
+    'Aogositra',
+    'Septambra',
+    'Oktobra',
+    'Novambra',
+    'Desambra',
+  ] as const,
+
+  FIRST_OF_MONTH: "voalohan'ny volana" as const,
+
+  TIME_PERIODS: {
+    MARAINA: 'maraina',
+    ANTOANDRO: 'antoandro',
+    TOLAKANDRO: 'tolakandro',
+    HARIVA: 'hariva',
+    ALINA: 'alina',
+  } as const,
+
+  HOUR_UNIT: 'ora' as const,
+  MINUTE_UNIT: 'minitra' as const,
+  SECOND_UNIT: 'segondra' as const,
+  YEAR_UNIT: 'taona' as const,
+  CONJ_SY: 'sy' as const,
 } as const
